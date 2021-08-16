@@ -44,7 +44,6 @@ int main()
       cout<<"Enter the cpu time : " <<endl;
     for(int i = 0 ; i<n ; ++i){
         int y ; cin >> y;
-        //cp.push_back(y);
         cp[i] = y;
         cp1.push_back(make_pair(i,y));
         tot+=y;
@@ -71,12 +70,7 @@ int main()
                ex_cp[ind] = 0;
                c++;
           }
-          cout<<c<<endl;
-
-          for(int i = 0 ; i<n ; ++i){
-         //   cout<<cp[i]<<" ";
-          }
-
+       
           for(int i = 0 ; i<v.size(); ++i){
                 int z = v[i].first;
                 int cnt = 1;
@@ -89,8 +83,6 @@ int main()
             cout<<endl;
 
          int w = 0;
-
-        // cout<<c<<endl;
 
 
          for(int i = 0 ; i<v1.size() ; ++i){
@@ -118,13 +110,7 @@ int main()
 
          }
          sort(wai.begin() , wai.end());
-
-
-
          cout<<endl;
-
-
-
 
          int wait[10000] = {0};
          int turn[10000] = {0};
