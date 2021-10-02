@@ -74,6 +74,55 @@ void SSTF(vector<int> request){
 
 }
 
+void CSCAN(vector<int> request){
+
+    vector<int> v,v1;
+    sort(request.begin() , request.end());
+
+    v.push_back(pos);
+
+    for(int i = 0 ; i<req ; ++i){
+        if(request[i] > pos)
+             v.push_back(request[i]);
+    }
+    v.push_back(heads-1);
+    v1.push_back(0);
+
+     for(int i = 0 ; i<req ; ++i){
+        if(request[i] < pos)
+             v1.push_back(request[i]);
+    }
+
+
+    int sum = 0;
+    for(int i = 0 ; i<v.size()-1 ; ++i){
+
+           sum += abs(v[i+1] - v[i]);
+
+            if(i<v.size()-1){
+                cout<<v[i]<<"-> ";
+            }
+    }
+    cout<<v[v.size()-1]<<"->";
+
+       for(int i = 0 ; i<v1.size()-1 ; ++i){
+
+           sum += abs(v1[i+1] - v1[i]);
+
+            if(i<v1.size()-1){
+                cout<<v1[i]<<"-> ";
+            }
+    }
+    cout<<v1[v1.size()-1];
+
+
+
+    cout<<endl;
+
+    cout<<"Total cylinder movement: "<<sum<<endl;
+
+
+}
 
 int main(){
 
@@ -99,7 +148,8 @@ int main(){
 
 
     FCFS(request); cout<<endl;
-    SSTF(request);
+    SSTF(request); cout<<endl;
+    CSCAN(request);
 
 
 
